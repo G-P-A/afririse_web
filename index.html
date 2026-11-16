@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AfriRise</title>
+<style>
+body{margin:0;font-family:sans-serif;background:#0a0a0a;color:#fff}
+.top{background:#6a11cb;padding:15px;text-align:center;font-size:22px;font-weight:bold}
+.box{max-width:500px;margin:auto;padding:15px}
+.create{background:#1e1e1e;padding:15px;border-radius:12px}
+textarea{width:100%;background:#2a2a2a;border:0;color:white;padding:12px;border-radius:8px;box-sizing:border-box}
+button{background:#6a11cb;color:white;border:0;padding:12px;border-radius:20px;width:100%;margin-top:10px;font-weight:bold}
+.post{background:#1e1e1e;padding:15px;border-radius:12px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="top">AfriRise 🌍</div>
+<div class="box">
+<div class="create">
+<textarea id="t" placeholder="O que está a acontecer?"></textarea>
+<button onclick="post()">Publicar</button>
+</div>
+<div id="feed"></div>
+</div>
+<script>
+function post(){
+let v=document.getElementById('t').value;
+if(!v)return;
+let d=document.createElement('div');
+d.className='post';
+d.innerHTML='<b>G-P-A</b><p>'+v+'</p><small>agora</small>';
+document.getElementById('feed').prepend(d);
+document.getElementById('t').value='';
+}
+</script>
+</body>
+</html>
